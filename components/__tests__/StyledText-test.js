@@ -1,10 +1,14 @@
-import * as React from 'react';
-import renderer from 'react-test-renderer';
+/** @format */
 
-import { MonoText } from '../StyledText';
+import * as React from "react";
+import renderer from "react-test-renderer";
+
+import { CustomText } from "../CustomText";
 
 it(`renders correctly`, () => {
-  const tree = renderer.create(<MonoText>Snapshot test!</MonoText>).toJSON();
+  const tree = renderer
+    .create(<CustomText>Snapshot test!</CustomText>)
+    .toJSON();
 
   expect(tree).toMatchSnapshot();
 });

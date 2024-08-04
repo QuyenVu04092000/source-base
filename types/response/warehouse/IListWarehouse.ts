@@ -1,4 +1,4 @@
-import { type IWard } from "@/types/component/common/IWard";
+import { type IWard } from '@/types/component/common/IWard';
 
 export interface IListWarehouseTableData {
   id: string;

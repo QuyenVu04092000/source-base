@@ -1,0 +1,12 @@
+.next
+next-env.d.ts
+node_modules
+yarn.lock
+package-lock.json
+next.config.js
+public
+babel.config.js
+expo-env.d.ts
+metro.config.js
+nativewind-env.d.ts
+tailwind.config.js

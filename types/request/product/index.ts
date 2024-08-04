@@ -1,11 +1,3 @@
-import type { IBaseRequest } from "@/types/request";
-
-export interface IListProductTableRequest
-  extends Pick<IBaseRequest, "search" | "productCategoryIds" | "productIndustryIds" | "statuses" | "page" | "limit"> {}
-
-export interface IExportExcelProductRequest
-  extends Pick<IBaseRequest, "search" | "productCategoryIds" | "productIndustryIds" | "statuses" | "userId"> {}
-
 export interface IApplicableZones {
   regionIds: string[];
 }
@@ -38,7 +30,7 @@ export interface IProductOtherInfo {
 export interface ICreateProductRequest {
   name: string;
   code: string;
-  status: "ACTIVE" | "INACTIVE";
+  status: 'ACTIVE' | 'INACTIVE';
   productCategoryId: string | null;
   productIndustryId: string | null;
   description: string | null;

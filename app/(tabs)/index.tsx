@@ -7,7 +7,7 @@ import { Pressable, StyleSheet } from 'react-native';
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
+      <Text className="text-medium60">Tab One</Text>
       <Link href="/screens" asChild>
         <Pressable>
           {({ pressed }) => (

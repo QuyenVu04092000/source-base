@@ -2,24 +2,25 @@ import { Link } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function HomeScreen() {
-    return (
-        <View style={styles.container}>
-            <Text>Home</Text>
-            <Link
-                href={{
-                    pathname: '/screens/details/[id]',
-                    params: { id: 'bacon' },
-                }}>
-                View user details
-            </Link>
-        </View>
-    );
+  return (
+    <View style={styles.container}>
+      <Text>Home</Text>
+      <Link
+        href={{
+          pathname: '/screens/details/[id]',
+          params: { id: 'bacon' },
+        }}
+      >
+        View user details
+      </Link>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });

@@ -1,10 +1,14 @@
-import type { IBaseResponse, IReturnData } from "@/types/response/base/IBaseResponse";
-import { StatusApisCode } from "@/utilities/enums/statusApis";
-import axios from "axios";
+import type { IBaseResponse, IReturnData } from '@/types/response/base/IBaseResponse';
+import { StatusApisCode } from '@/utilities/enums/statusApis';
+import axios from 'axios';
 // import userStore from "stores/user";
 // import IBaseResponse, { IReturnData } from "types/response/base/IBaseResponse";
 
-const apiGetClient = async <T>(url: string, params?: any, token?: string): Promise<IReturnData<T>> => {
+const apiGetClient = async <T>(
+  url: string,
+  params?: any,
+  token?: string
+): Promise<IReturnData<T>> => {
   const returnData: IReturnData<T> = { error: false, data: {} as IBaseResponse<T> };
 
   try {

@@ -1,8 +1,12 @@
-import type { IBaseResponse, IReturnData } from "@/types/response/base/IBaseResponse";
-import { StatusApisCode } from "@/utilities/enums/statusApis";
-import axios from "axios";
+import type { IBaseResponse, IReturnData } from '@/types/response/base/IBaseResponse';
+import { StatusApisCode } from '@/utilities/enums/statusApis';
+import axios from 'axios';
 
-const apiDeleteClient = async <T>(url: string, data?: any, token?: string): Promise<IReturnData<T>> => {
+const apiDeleteClient = async <T>(
+  url: string,
+  data?: any,
+  token?: string
+): Promise<IReturnData<T>> => {
   const returnData: IReturnData<T> = { error: false, data: {} as IBaseResponse<T> };
 
   try {

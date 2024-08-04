@@ -29,7 +29,7 @@ interface IPostImageResponse {
 interface IMetaResponse {
   page?: number;
   limit?: number;
-  totalRecords?: number;
+totalRecords?: number;
 }
 
 interface IBaseResponse<T = any> {
@@ -44,4 +44,7 @@ interface IReturnData<T = any> {
   message?: string;
 }
 
-export type { IBaseResponse, IReturnData, IPaginationResponse, IMetaResponse, IImageResponse, IPostImageResponse };
+export type {
+  IBaseResponse, IImageResponse, IMetaResponse, IPaginationResponse, IPostImageResponse, IReturnData
+};
+

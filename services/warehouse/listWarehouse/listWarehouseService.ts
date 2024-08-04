@@ -1,33 +1,30 @@
 /** @format */
 
-import apiGetClient from "@/services/apiClient/get";
-import apiPutClient from "@/services/apiClient/put";
-import type { IBaseResponse } from "@/types/response/base/IBaseResponse";
+import apiGetClient from '@/services/apiClient/get';
+import apiPutClient from '@/services/apiClient/put';
+import type { IBaseResponse } from '@/types/response/base/IBaseResponse';
 import {
   type IDetailWarehouse,
   type IListWarehouseTableData,
-} from "@/types/response/warehouse/IListWarehouse";
-import Endpoints from "@/utilities/enums/endpoints";
+} from '@/types/response/warehouse/IListWarehouse';
+import Endpoints from '@/utilities/enums/endpoints';
 
 export const getListWarehouseTableData = async (
   filter: any
 ): Promise<IBaseResponse<IListWarehouseTableData[]>> => {
   let response = {} as IBaseResponse<IListWarehouseTableData[]>;
 
-  await apiGetClient<IListWarehouseTableData[]>(
-    Endpoints.WAREHOUSE.GET_LIST_WAREHOUSE,
-    {
-      warehouseIds: filter.warehouseIds ? filter.warehouseIds : null,
-      regionIds: filter.regionIds ? filter.regionIds : null,
-      channels: filter.channelIds ? filter.channelIds : null,
-      startTime: filter.startTime ? filter.startTime : null,
-      endTime: filter.endTime ? filter.endTime : null,
-      page: filter.page ? filter.page : 1,
-      limit: filter.limit ? filter.limit : 10,
-      search: filter.search ? filter.search : null,
-      statuses: filter.status ? filter.status : null,
-    }
-  ).then((res) => {
+  await apiGetClient<IListWarehouseTableData[]>(Endpoints.WAREHOUSE.GET_LIST_WAREHOUSE, {
+    warehouseIds: filter.warehouseIds ? filter.warehouseIds : null,
+    regionIds: filter.regionIds ? filter.regionIds : null,
+    channels: filter.channelIds ? filter.channelIds : null,
+    startTime: filter.startTime ? filter.startTime : null,
+    endTime: filter.endTime ? filter.endTime : null,
+    page: filter.page ? filter.page : 1,
+    limit: filter.limit ? filter.limit : 10,
+    search: filter.search ? filter.search : null,
+    statuses: filter.status ? filter.status : null,
+  }).then((res) => {
     if (!res.error && res.data) {
       response = res.data;
     }
@@ -42,7 +39,7 @@ export const getDetailWarehouse = async (
   let response = {} as IBaseResponse<IDetailWarehouse>;
 
   await apiGetClient<IDetailWarehouse>(
-    Endpoints.WAREHOUSE.GET_LIST_WAREHOUSE + "/" + String(id),
+    Endpoints.WAREHOUSE.GET_LIST_WAREHOUSE + '/' + String(id),
     {}
   ).then((res) => {
     if (!res.error && res.data) {
@@ -59,12 +56,9 @@ export const updateNoteWarehouse = async (
 ): Promise<IBaseResponse<any>> => {
   let response = {} as IBaseResponse<any>;
 
-  await apiPutClient<IDetailWarehouse>(
-    Endpoints.WAREHOUSE.GET_LIST_WAREHOUSE + "/" + String(id),
-    {
-      note,
-    }
-  ).then((res) => {
+  await apiPutClient<IDetailWarehouse>(Endpoints.WAREHOUSE.GET_LIST_WAREHOUSE + '/' + String(id), {
+    note,
+  }).then((res) => {
     if (!res.error && res.data) {
       response = res.data;
     }
@@ -91,9 +85,7 @@ export const disableWarehouse = async (
   return response;
 };
 
-export const handleExportListWarehouse = async (
-  filter: any
-): Promise<IBaseResponse<any>> => {
+export const handleExportListWarehouse = async (filter: any): Promise<IBaseResponse<any>> => {
   let response = {} as IBaseResponse<any>;
 
   await apiGetClient<any>(Endpoints.WAREHOUSE.LIST_WAREHOUSE_EXPORT, {
@@ -114,9 +106,7 @@ export const handleExportListWarehouse = async (
   return response;
 };
 
-export const handleExportListInventory = async (
-  filter: any
-): Promise<IBaseResponse<any>> => {
+export const handleExportListInventory = async (filter: any): Promise<IBaseResponse<any>> => {
   let response = {} as IBaseResponse<any>;
 
   await apiGetClient<any>(Endpoints.WAREHOUSE.LIST_INVENTORY_EXPORT, {
